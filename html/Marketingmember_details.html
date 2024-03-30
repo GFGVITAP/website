@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Member Data Lookup</title>
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+    <style>
+      /* Add your CSS styles here */
+      body {
+        background-color: black;
+
+      }
+
+      body {
+      scrollbar-width: thin; /* For Firefox */
+      scrollbar-color: rgb(72, 72, 72) rgb(57, 57, 57); /* For Firefox */
+    }
+
+    /* For webkit-based browsers (Chrome) */
+    body::-webkit-scrollbar {
+      width: 1vw;
+    }
+
+    body::-webkit-scrollbar-track {
+      background: rgb(57, 57, 57);
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: rgb(72, 72, 72);
+    }
+
+
+
+      @font-face {
+        font-family: "against-regular";
+        src: url("../asset/against\ regular.ttf") format("truetype");
+        font-display: swap;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "BertiogaSans-Bold";
+        src: url("../asset/fonts/BertiogaSans-Bold.ttf") format("truetype");
+        font-display: swap;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "ClashDisplay-Regular";
+        src: url("../asset/fonts/ClashDisplay-Regular.woff2") format("woff2"),
+          url("../asset/fonts/ClashDisplay-Regular.woff") format("woff"),
+          url("../asset/fonts/ClashDisplay-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "PlayfairDisplay-Regular";
+        src: url("../asset/PlayfairDisplay-Regular.ttf") format("truetype");
+        font-display: swap;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Slagless";
+        src: url("../asset/Slagless-2OX63.ttf") format("truetype");
+        font-display: swap;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Montserrat-Regular";
+        src: url("../asset/Montserrat-Regular.ttf") format("truetype");
+        font-weight: 200;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      .box_big_1 {
+        display: flex;
+      }
+
+      .main {
+        margin: auto;
+        width: 80%;
+        margin-top: 2%;
+      }
+
+      .name_box {
+        background-color: rgb(0, 0, 0);
+        width: 30vw;
+        height: 15vw;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #2f8d46;
+      }
+
+      .name {
+        flex-direction: row;
+        font-family: "Slagless";
+        font-size: 2.5vw;
+        line-height: 0%;
+        padding-top: 4vw;
+      }
+
+      .role {
+        font-family: "Montserrat-Regular";
+        line-height: 0%;
+        font-size: 1.35vw;
+      }
+
+      .photo {
+        width: 15vw;
+        height: 15vw;
+        align-content: center;
+        justify-content: center;
+        display: flex;
+      }
+
+      .img {
+        align-self: center;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+      }
+      .text_box_right {
+        background-color: #ffefca;
+        width: 33.75vw;
+        height: 30vw;
+        font-size: 1.2vw;
+        text-align: justify;
+        font-family: "ClashDisplay-Regular";
+      }
+
+      .text_box_left {
+        background-color: #ffefca;
+        width: 30vw;
+        height: 30vw;
+        margin-top: -15vw;
+        font-family: "PlayfairDisplay-Regular";
+        font-size: 1.5vw;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .left_text {
+        margin-left: 2vw;
+        line-height: 2.5vw;
+        margin-right: 2vw;
+      }
+
+      .right_text {
+        margin-left: 1vw;
+
+        margin-right: 1vw;
+      }
+
+      .box_big_2 {
+        background-color: #1a4d2e;
+        height: 15vw;
+        display: flex;
+      }
+      .bottom_green_box {
+        display: flex;
+      }
+
+      .logo {
+        border: #2f8d46 1px solid;
+        height: 1vw;
+        width: 1vw;
+      }
+
+      .box_1 {
+        width: 16vw;
+      }
+      .box_2 {
+        width: 16vw;
+      }
+      .box_3 {
+        width: 16vw;
+      }
+
+      .logo1 {
+        float: right;
+        margin-top: 3%;
+      }
+
+      .logo2 {
+        float: right;
+        margin-top: 3%;
+      }
+      .logo3 {
+        float: right;
+        margin-top: 3%;
+      }
+
+      .socials {
+        display: flex;
+        height: 15vw;
+        width: 15vw;
+        position: absolute;
+        margin-left: 30vw;
+        margin-top: 15vw;
+      }
+
+      .social_logo {
+        height: 3vw;
+        margin: 2vw;
+      }
+
+      .logo_container1 img {
+        transition: 1s;
+      }
+
+      .logo_container1 img:hover {
+        content: url("../asset/facebook\ \(1\).png");
+      }
+
+      .logo_container_2 img {
+        transition: 1s;
+      }
+
+      .logo_container_2 img:hover {
+        content: url("../asset/github\ \(1\).png");
+      }
+
+      .logo_container_3 img {
+        transition: 1s;
+      }
+
+      .logo_container_3 img:hover {
+        content: url("../asset/linkedin-logo.png");
+      }
+
+      .logo_container_4 img {
+        transition: 1s;
+      }
+
+      .logo_container_4 img:hover {
+        content: url("../asset/instagram\ \(1\).png");
+      }
+
+      .events1 {
+        font-family: "BertiogaSans-Bold";
+        color: white;
+        font-size: 5vw;
+        margin-left: 20%;
+      }
+
+      .events2 {
+        font-family: "BertiogaSans-Bold";
+        color: white;
+        font-size: 5vw;
+        margin-left: 20%;
+      }
+
+      .events3 {
+        font-family: "BertiogaSans-Bold";
+        color: white;
+        font-size: 5vw;
+        margin-left: 20%;
+      }
+
+      .events1_1 {
+        font-family: "ClashDisplay-Regular";
+        color: white;
+        font-size: 1.3vw;
+        margin-left: 20%;
+        margin-top: -30%;
+      }
+
+      .events2_1 {
+        font-family: "ClashDisplay-Regular";
+        color: white;
+        font-size: 1.3vw;
+        margin-left: 20%;
+        margin-top: -30%;
+      }
+
+      .events3_1 {
+        font-family: "ClashDisplay-Regular";
+        color: white;
+        font-size: 1.3vw;
+        margin-left: 20%;
+        margin-top: -30%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Member Data Lookup</h1>
+
+    <div class="main"  id="result">
+      <!-- Member data will be displayed here -->
+    </div>
+
+    <script>
+      // Extract member name from URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const memberName = urlParams.get("name");
+
+      // Load and parse the CSV file
+      fetch("marketing.csv")
+        .then((response) => response.text())
+        .then((data) => {
+          // Split CSV data into rows
+          const rows = data.split("\n");
+          let memberData = null;
+
+          // Iterate through rows to find the matching member
+          for (let i = 1; i < rows.length; i++) {
+            // Start from 1 to skip header row
+            const columns = rows[i].split(",");
+            const csvMemberName = columns[0].trim(); // Assuming member name is in the first column
+
+            if (csvMemberName === memberName) {
+              memberData = columns.slice(1); // Exclude the member name itself
+              break;
+            }
+          }
+
+          // Display the result
+          const resultDiv = document.getElementById("result");
+          resultDiv.innerHTML = ""; // Clear previous result
+
+          if (memberData) {
+            resultDiv.innerHTML = `
+
+
+            <div class="box_big_1">
+
+            <div class="name_box">
+                <p class="name">${memberName}</p>
+                <p class="role">${memberData[0]}</p>
+            </div>
+
+            <div class="socials">
+                <div class="socials1">
+                    <div class="logo_container1">
+                        <a href="${memberData[8]}">
+                            <img class="social_logo" src="../asset/facebook.png" />
+                        </a>
+                    </div>
+                    <div class="logo_container_2">
+                        <a href="${memberData[6]}">
+                            <img class="social_logo" src="../asset/github.png" />
+                        </a>
+                    </div>
+                </div>
+                <div class="socials2">
+                    <div class="logo_container_3">
+                        <a href="${memberData[5]}">
+                            <img class="social_logo" src="../asset/linkedin_green.png" />
+                        </a>
+                    </div>
+                    <div class="logo_container_4">
+                        <a href="${memberData[7]}">
+                            <img class="social_logo" src="../asset/instagram.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo">
+                <img class="img" src="../html/images_M/${memberName}.jpg" />
+            </div>
+
+            <div class="text_box_right">
+                <p class="right_text"> ${memberData[9]}
+                </p>
+            </div>
+        </div>
+
+        <div class="box_big_2">
+            <div class="text_box_left">
+                <p class="left_text">${memberData[10]} 
+                </p>
+            </div>
+
+            <div class="bottom_green_box">
+                <div class="box_1">
+                    <div class="logo1">
+                        <lord-icon src="https://cdn.lordicon.com/iltqorsz.json" trigger="loop" delay="1000"
+                            colors="primary:#ffffff,secondary:#000000" style="width:3vw;height:3vw;">
+                        </lord-icon>
+                    </div>
+                    <p class="events1">${memberData[13]}</p>
+                    <p class="events1_1">Events held</p>
+                </div>
+                <div class="box_2">
+                    <div class="logo2">
+                        <lord-icon src="https://cdn.lordicon.com/hpxruznz.json" trigger="loop" delay="1000"
+                            colors="primary:#ffffff,secondary:#08a88a" style="width:4vw;height:4vw">
+                        </lord-icon>
+                    </div>
+                    <p class="events2">${memberData[14]}</p>
+                    <p class="events2_1">Years of Experience</p>
+                </div>
+                <div class="box_3">
+                    <div class="logo3">
+                        <lord-icon src="https://cdn.lordicon.com/dqunxaob.json" trigger="loop" delay="1000"
+                            colors="primary:#000000,secondary:#ffffff" style="width:4vw;height:4vw">
+                        </lord-icon>
+                    </div>
+                    <p class="events3">${memberData[12]}</p>
+                    <p class="events3_1">Contributions</p>
+                </div>
+            </div>
+        </div
+
+
+
+            `;
+          } else {
+            resultDiv.innerHTML = `<p>No data found for ${memberName}</p>`;
+          }
+
+          // Add your custom content below the member data
+          resultDiv.innerHTML += `
+            <p>This is your custom content below the member data.</p>
+          `;
+        })
+        .catch((error) => {
+          console.error("Error loading CSV file:", error);
+        });
+    </script>
+  </body>
+</html>
